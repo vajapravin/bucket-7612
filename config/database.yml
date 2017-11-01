@@ -1,0 +1,18 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: ariviga_development
+  username: root
+  password: root
+staging:
+  adapter: mysql2
+  encoding: utf8
+  database: ariviga_staging
+  username: root
+  password: root
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: ariviga_production
+  username: root
+  password: root

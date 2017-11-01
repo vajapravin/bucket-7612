@@ -1,0 +1,13 @@
+%form{:action => "/registrations", method: 'post', "data-error" => "Please provide your name and email address and agree to the terms.", "data-success" => "Thanks for signing up.  Please check your inbox for a confirmation email."}
+  .form-group.col-md-12.col-sm-12{style: 'float:left'}
+    %h2 1/2 Sign Up
+  .form-group.col-md-12.col-sm-12{style: 'float:left'}
+    = render partial: '/shared/messages'
+  .form-group.col-md-12.col-sm-12
+    %input.validate-required{:name => "user[email]", :placeholder => "Email Address", :type => "email", required: true, autofocus: true}/
+  .form-group.col-md-12.col-sm-12
+    %input.validate-required{:name => "user[password]", :placeholder => "Password", :type => "password", required: true}/
+  .form-group.col-md-12.col-sm-12
+    %input.validate-required{:name => "user[password_confirmation]", :placeholder => "Password Confirmation", :type => "password", required: true}/
+  .form-group.col-md-12.col-sm-12
+    %button{type: "submit", class: "btn btn--primary"} Submit

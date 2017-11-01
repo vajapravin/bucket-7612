@@ -1,0 +1,9 @@
+%form{:action => "/registrations/verify", method: 'post', "data-error" => "Please provide your name and email address and agree to the terms.", "data-success" => "Thanks for signing up.  Please check your inbox for a confirmation email."}
+  .form-group.col-md-12.col-sm-12{style: 'float:left'}
+    %h2 2/2 Verify Code
+  .form-group.col-md-12.col-sm-12{style: 'float:left'}
+    = render partial: '/shared/messages'
+  .form-group.col-md-12.col-sm-12
+    %input.validate-required{:name => "user[confirmation_token]", :placeholder => "4 Digit Code", :type => "text", required: true, autofocus: true}/
+  .form-group.col-md-12.col-sm-12
+    %button{type: "submit", class: "btn btn--primary"} Submit

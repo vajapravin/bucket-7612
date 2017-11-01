@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %title ArivigaDemo
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "Site Description Here", :name => "description"}/
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    %link{:href => "https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i%7CMaterial+Icons", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700", :rel => "stylesheet"}/
+  %body
+    %a#start
+    .nav-container
+      %nav.bar.bar-4.bar--transparent.bar--absolute{"data-fixed-at" => "200"}
+        .container
+          .row
+            .col-md-1.col-md-offset-0.col-sm-2.col-sm-offset-0.col-xs-4.col-xs-offset-4
+              .bar__module
+                %a{:href => "/", style: 'font-size: 25px; text-decoration: none; color: #cecece;'}
+                  Ariviga
+    .main-container
+      %section.imageblock.switchable.switchable--switch.feature-large.bg--dark.space--sm
+        .imageblock__content.col-md-6.col-sm-4.pos-right
+          .background-image-holder
+            %img{:alt => "image", :src => asset_path("/assets/img/landing-15.jpg")}/
+        .container
+          .row
+            .col-md-5.col-sm-7
+              =yield
+
+    / <div class="loader"></div>
+    %a.back-to-top.inner-link{"data-scroll-class" => "100vh:active", :href => "#start"}
+      %i.stack-interface.stack-up-open-big

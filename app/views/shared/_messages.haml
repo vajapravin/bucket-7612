@@ -1,0 +1,6 @@
+= content_tag :div, class: "row" do
+  = content_tag :div, class: "col-xs-12" do
+    - flash.each do |key, msg|
+      - if msg.is_a?(String)
+        = content_tag :div, class: "alert alert-#{alert_style(key)} alert-dismissable", style: 'color: red;' do
+          = content_tag :div, msg.html_safe, id: "flash_#{key}"
